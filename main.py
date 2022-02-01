@@ -1,21 +1,47 @@
+import pygame, pandas as pd
+'''
 import sys, pygame, random, pandas as pd
 from ship import Ship
 from asteroid import Asteroid
 from pygame.locals import *
+'''
+
+
 
 pygame.init()
 screen_info = pygame.display.Info()
 
 # set the width and height to the size of the screen
-size = (width, height) = (int(screen_info.current_w * 0.5), int(screen_info.current_h * 0.5))
+size = (width, height) = (int(screen_info.current_w), int(screen_info.current_h))
+
+
 
 screen = pygame.display.set_mode(size)
 clock = pygame.time.Clock()
 color = (30, 0, 30)
 screen.fill(color)
 
+
+
 # read and store game data
 df = pd.read_csv('game_info.csv')
+
+NumLevel = df['LevelNum'].max()
+CurrentLevel = df['LevelNum'].min()
+
+LevelData = df.iloc[CurrentLevel]
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Setup Game Variables
 Asteroids = pygame.sprite.Group()
