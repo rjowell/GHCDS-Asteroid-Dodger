@@ -20,3 +20,11 @@ class Ship(pygame.sprite.Sprite):
 
     def reset(self, pos):
         self.rect.center = pos
+
+
+'''
+In "ship.py" define a Ship class:
+-It should import pygame and random libraries
+-init method should take 1 param: 'pos'
+3 other methods: update, checkReset, reset
+'''

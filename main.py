@@ -1,9 +1,14 @@
 import pygame, pandas as pd
+from ship import Ship
 '''
 import sys, pygame, random, pandas as pd
-from ship import Ship
+
 from asteroid import Asteroid
 from pygame.locals import *
+
+add the following import:
+from ship import Ship
+Create a new instance of Ship with a tuple for the position parameter
 '''
 
 
@@ -34,8 +39,8 @@ LevelData = df.iloc[CurrentLevel]
 
 
 
-
-
+#Player = Ship(())
+Player = Ship((LevelData['PlayerX'], LevelData['PlayerY']))
 
 
 
@@ -44,12 +49,12 @@ LevelData = df.iloc[CurrentLevel]
 
 
 # Setup Game Variables
-Asteroids = pygame.sprite.Group()
+
 NumLevels = df['LevelNum'].max()
 Level = df['LevelNum'].min()
 LevelData = df.iloc[Level]
-AsteroidCount = LevelData['AsteroidCount']
-Player = Ship((LevelData['PlayerX'], LevelData['PlayerY']))
+
+
 
 
 def init():
@@ -71,6 +76,16 @@ def win():
         screen.fill(color)
         screen.blit(text, text_rect)
         pygame.display.flip()
+
+
+
+'''
+Define a 'main' function
+global level
+call "init()" function
+while level is less than NumLevels
+
+'''
 
 
 def main():

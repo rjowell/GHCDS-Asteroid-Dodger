@@ -23,3 +23,8 @@ class Asteroid(pygame.sprite.Sprite):
             self.speed[1] *= -1
             self.image = pygame.transform.flip(self.image, False, True)
             self.rect.move_ip(0, self.speed[1])
+
+
+
+
+
